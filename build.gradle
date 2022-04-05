@@ -19,12 +19,36 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'com.h2database:h2'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// ユニットテスト
+	implementation 'junit:junit:4.13.1'
+
+	// タイムリーフの依存性
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	// コード自動生成
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// 入力された値を検証、不正なデータを受け付けないようにする。
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// データの永続化
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+	runtimeOnly 'com.h2database:h2'
+
+	// ORマッパー
+	implementation 'org.hibernate:hibernate-core:5.5.7.Final'
+
+	// セキュリティ　デフォルトのログインページを生成
+	// 初回Passはコンソールに表示されるUsing generated security password:を参照
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
 }
 
 tasks.named('test') {
