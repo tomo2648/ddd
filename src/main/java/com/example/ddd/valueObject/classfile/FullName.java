@@ -1,4 +1,4 @@
-package com.example.ddd;
+package com.example.ddd.valueObject.classfile;
 
 public class FullName {
     private String firstName;

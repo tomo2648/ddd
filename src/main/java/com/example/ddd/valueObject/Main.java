@@ -1,6 +1,6 @@
 package com.example.ddd.valueObject;
 
-import com.example.ddd.FullName;
+import com.example.ddd.valueObject.classfile.FullName;
 
 public class Main {
 
@@ -35,6 +35,20 @@ public class Main {
         String greet2 = "こんにちは";
         greet2 = "Hello";
 
+        // リスト2.13
+        System.out.println(0 == 0);
+        System.out.println(0 == 1);
+        System.out.println("a" == "a");
+        System.out.println("a" == "b");
+        System.out.println("hello" == "hello");
+        System.out.println("hello" == "こんにちは");
 
+        // リスト2.14
+        FullName nameA = new FullName("masanobu", "naruse");
+        FullName nameB = new FullName("masanobu", "naruse");
+
+        // 別個のインスタンス同士の比較
+        System.out.println(nameA.equals(nameB));
+        // ↑ インスタンスを構成する属性が等価なのでtrue
     }
 }
