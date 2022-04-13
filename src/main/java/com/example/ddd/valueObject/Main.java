@@ -14,5 +14,6 @@ public class Main {
 
         FullName fullName2 = new FullName("john", "smith");
         System.out.println("" + fullName2.getFirstName());
+
     }
 }
