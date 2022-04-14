@@ -1,6 +1,8 @@
 package com.example.ddd.valueObject;
 
+import com.example.ddd.valueObject.classfile.FirstName;
 import com.example.ddd.valueObject.classfile.FullName;
+import com.example.ddd.valueObject.classfile.LastName;
 
 public class Main {
 
@@ -50,5 +52,24 @@ public class Main {
         // 別個のインスタンス同士の比較
         System.out.println(nameA.equals(nameB));
         // ↑ インスタンスを構成する属性が等価なのでtrue
+
+        // リスト2.15
+        FullName nameA2 = new FullName("masanobu", "naruse");
+        FullName nameB2 = new FullName("john", "smith");
+
+        boolean comareResult = nameA2.firstName == nameB2.firstName
+                && nameA2.lastName == nameB2.lastName;
+
+        System.out.println(comareResult);
+
+        // リスト2.17
+        // リスト2.15 記述を参照
+
+        boolean comareResult2 = nameA2.equals(nameB2);
+        System.out.println(comareResult2);
+
+        // リスト2.21
+        LastName fis = new LastName("");
+
     }
 }
